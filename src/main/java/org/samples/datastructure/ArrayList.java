@@ -61,7 +61,9 @@ public class ArrayList<E> extends AbstractList implements IList<E> {
     }
 
     private void expandArray() {
-        Object[] expandArray = new Object[this.capacity * 2];
+        int newCapacity = this.capacity * 2;
+        Object[] expandArray = new Object[newCapacity];
+        this.capacity = newCapacity;
 
         for (int i = 0; i < this.length; i++) {
             expandArray[i] = this.elements[i];
